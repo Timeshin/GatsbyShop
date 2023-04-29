@@ -2,17 +2,28 @@ import { FC } from 'react'
 import { IProduct } from '@/types/common.types'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { FileNode } from 'gatsby-plugin-image/dist/src/components/hooks'
+import { navigate } from 'gatsby'
 
 interface IProductItem {
 	product: IProduct
 	stubProductImageNode: FileNode
 }
 
-const ProductItem: FC<IProductItem> = ({ product: { description, price, title, imageUrl }, stubProductImageNode }) => {
+const ProductItem: FC<IProductItem> = ({
+	product: { description, id, price, title, imageUrl },
+	stubProductImageNode
+}) => {
 	const stubImage = getImage(stubProductImageNode)
 
+	const onClickProductCardHandler = () => {
+		navigate(`/product/${id}`)
+	}
+
 	return (
-		<div className='bg-white shadow-lg rounded-lg p-6 w-72'>
+		<div
+			className='group bg-white shadow-lg rounded-lg p-6 w-72 cursor-pointer transform transition duration-300 ease-in-out hover:shadow-xl hover:scale-105'
+			onClick={onClickProductCardHandler}
+		>
 			{imageUrl ? (
 				<img src={imageUrl} alt='productImage' className='w-full h-64 object-cover rounded-lg shadow-md' />
 			) : (

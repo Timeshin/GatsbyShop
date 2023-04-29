@@ -2498,4 +2498,21 @@ declare namespace Queries {
 	}
 
 	type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: number; readonly maxWidth: number }
+
+	type GetAllProductsQueryVariables = Exact<{ [key: string]: never }>
+
+	type GetAllProductsQuery = {
+		readonly server: {
+			readonly allProducts: ReadonlyArray<{
+				readonly id: string
+				readonly description: string
+				readonly price: number
+				readonly title: string
+				readonly imageUrl: string
+			} | null> | null
+		}
+		readonly file: {
+			readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null
+		} | null
+	}
 }

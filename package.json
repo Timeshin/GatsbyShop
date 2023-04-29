@@ -18,6 +18,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@netlify/functions": "^1.4.0",
     "gatsby": "^5.9.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
@@ -26,6 +27,7 @@
     "gatsby-plugin-provide-react": "^1.0.2",
     "gatsby-plugin-sharp": "^5.9.0",
     "gatsby-plugin-sitemap": "^6.9.0",
+    "gatsby-plugin-typescript": "^5.9.0",
     "gatsby-source-filesystem": "^5.9.0",
     "gatsby-source-graphql": "^5.9.0",
     "gatsby-transformer-sharp": "^5.9.0",
