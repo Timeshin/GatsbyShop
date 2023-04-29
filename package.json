@@ -1,0 +1,65 @@
+{
+  "name": "shop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "shop",
+  "author": "Timeshin",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "start": "gatsby develop -H 0.0.0.0",
+    "json-server": "json-graphql-server db/products.js --p 5173 -H 0.0.0.0",
+    "start:dev": "concurrently \"npm run start\" \"npm run json-server\"",
+    "build": "gatsby build",
+    "start:prod": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "gatsby": "^5.9.0",
+    "gatsby-image": "^3.11.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-image": "^3.9.0",
+    "gatsby-plugin-manifest": "^5.9.0",
+    "gatsby-plugin-provide-react": "^1.0.2",
+    "gatsby-plugin-sharp": "^5.9.0",
+    "gatsby-plugin-sitemap": "^6.9.0",
+    "gatsby-source-filesystem": "^5.9.0",
+    "gatsby-source-graphql": "^5.9.0",
+    "gatsby-transformer-sharp": "^5.9.0",
+    "json-graphql-server": "^2.3.2",
+    "json-server": "^0.17.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.2",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "autoprefixer": "^10.4.14",
+    "babel-plugin-lodash": "^3.3.4",
+    "concurrently": "^8.0.1",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "gatsby-plugin-postcss": "^6.9.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "postcss": "^8.4.23",
+    "prettier": "^2.8.8",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.4"
+  },
+  "lint-staged": {
+    "**/*.+(ts|tsx)": [
+      "eslint src --fix",
+      "prettier src --write --config .prettierrc.json"
+    ]
+  }
+}

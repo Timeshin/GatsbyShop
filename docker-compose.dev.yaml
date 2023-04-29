@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  frontend:
+    container_name: gatsby-shop
+    image: gatsby-shop
+    build:
+      target: development
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "8000:8000"
+      - "5173:5173"
