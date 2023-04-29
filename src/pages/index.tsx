@@ -7,16 +7,16 @@ import { PorductsList, SEO } from '@/components'
 import MainLayout from '../layouts/MainLayout'
 
 interface IIndexPage {
-  server: {
-    allProducts: IProduct[]
-  }
-  file: FileNode
+	server: {
+		allProducts: IProduct[]
+	}
+	file: FileNode
 }
 
 const IndexPage: FC<PageProps<IIndexPage>> = ({ data }) => (
-  <MainLayout>
-    <PorductsList products={data.server.allProducts} stubProductImageNode={data.file} />
-  </MainLayout>
+	<MainLayout>
+		<PorductsList products={data.server.allProducts} stubProductImageNode={data.file} />
+	</MainLayout>
 )
 
 export default IndexPage
@@ -24,20 +24,20 @@ export default IndexPage
 export const Head: HeadFC = () => <SEO />
 
 export const query = graphql`
-  query AllProductsQuery {
-    server {
-      allProducts {
-        description
-        id
-        price
-        title
-        imageUrl
-      }
-    }
-    file(relativePath: { eq: "ProductImageStub.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO])
-      }
-    }
-  }
+	query AllProductsQuery {
+		server {
+			allProducts {
+				description
+				id
+				price
+				title
+				imageUrl
+			}
+		}
+		file(relativePath: { eq: "ProductImageStub.jpg" }) {
+			childImageSharp {
+				gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO])
+			}
+		}
+	}
 `
