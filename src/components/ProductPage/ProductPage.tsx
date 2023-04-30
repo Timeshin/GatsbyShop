@@ -1,8 +1,10 @@
 import { FC } from 'react'
-import { PageProps } from 'gatsby'
+import { HeadFC, PageProps } from 'gatsby'
 import { IProduct } from '@/types/common.types'
 import { navigate } from 'gatsby'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
+
+import { SEO } from '@/components'
 
 interface IProductPage {
 	product: IProduct
@@ -47,3 +49,5 @@ const ProductPage: FC<PageProps<null, IProductPage>> = ({ pageContext: { product
 }
 
 export default ProductPage
+
+export const Head: HeadFC = () => <SEO />

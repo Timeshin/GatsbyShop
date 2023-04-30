@@ -1,9 +1,6 @@
 import type { GatsbyConfig } from 'gatsby'
 
 const config: GatsbyConfig = {
-	flags: {
-		PARALLEL_QUERY_RUNNING: true
-	},
 	siteMetadata: {
 		title: 'shop',
 		description: 'Products page',
@@ -15,6 +12,12 @@ const config: GatsbyConfig = {
 		'gatsby-plugin-image',
 		'gatsby-plugin-sitemap',
 		'gatsby-plugin-provide-react',
+		{
+			resolve: 'gatsby-plugin-html-attributes',
+			options: {
+				lang: 'en'
+			}
+		},
 		{
 			resolve: 'gatsby-plugin-typescript',
 			options: {
